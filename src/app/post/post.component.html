@@ -1,4 +1,12 @@
-<li>
-  <h4>{{ post.title }}</h4>
-  <p>{{post}}</p>
+<li [ngClass]="{'list-group-item': true, 
+                'list-group-item-success': getLoveIts() > 0,
+                'list-group-item-danger': getLoveIts() < 0 }">
+  <div>
+    <span style="float:right; font-size:20px;">{{ getCreatedAt() | date: 'short' }} </span>
+    <h2>{{ getTitle() }}</h2>
+    <p>{{ getContent() }}</p>
+    
+    <button class="btn btn-success">Love it</button>
+    <button class="btn btn-danger">Dont love it</button>
+</div>
 </li>

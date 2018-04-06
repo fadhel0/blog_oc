@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -8,30 +8,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class PostComponent implements OnInit {
 
+  @Input() title: string;
+  @Input() content: string;
+  @Input() loveIts: number;
+  @Input() created_at: Date;
+
   constructor() { }
 
   ngOnInit() {
-  }
-
-}
-
-class PostListComponent {
-  title: string;
-  content: string;
-  loveIts: number;
-  created_at: Date;
-
-  // Post(title, content, loveIts, created_at) {
-  //   this.title = title;
-  //   this.content = content;
-  //   this.loveIts = loveIts;
-  //   this.created_at = new Date();
-  // };
-  constructor(title, content, loveIts, created_at) {
-    this.title = title;
-    this.content = content;
-    this.loveIts = loveIts;
-    this.created_at = new Date();
   }
 
   getTitle() {
@@ -43,8 +27,8 @@ class PostListComponent {
   getLoveIts() {
     return this.loveIts;
   }
-  getCreatedAt(){
+  getCreatedAt() {
     return this.created_at;
   }
-
 }
+
