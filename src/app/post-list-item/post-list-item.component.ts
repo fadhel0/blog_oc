@@ -1,13 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  selector: 'app-post-list-item',
+  templateUrl: './post-list-item.component.html',
+  styleUrls: ['./post-list-item.component.scss']
 })
 
-export class PostComponent implements OnInit {
+export class PostListItemComponent implements OnInit {
 
   @Input() title: string;
   @Input() content: string;
