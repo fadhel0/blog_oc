@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 
 @Component({
   selector: 'app-post',
@@ -29,6 +30,15 @@ export class PostComponent implements OnInit {
   }
   getCreatedAt() {
     return this.created_at;
+  }
+
+  like() {
+    // return this.loveIts + 1;
+    return(this.loveIts = this.loveIts + 1);
+  }
+
+  dislike() {
+    return (this.loveIts = this.loveIts - 1);
   }
 }
 
